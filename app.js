@@ -10,7 +10,7 @@ app.use(formidable());
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(function (req, res, next) {
 
-    var origins = ['http://127.0.0.1', 'http://localhost'];
+    var origins = ['http://127.0.0.1', 'http://localhost', 'http://18.196.199.182'];
 
     for (let i = 0; i < origins.length; i++) {
         let origin = origins[i];
@@ -36,7 +36,6 @@ const transporter = nodemailer.createTransport({
 })
 
 app.post('/email', (req, resp) => {
-
     const fields = req.fields;
     const files = req.files;
 
